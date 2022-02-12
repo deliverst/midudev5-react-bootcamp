@@ -1,14 +1,9 @@
 import {useState} from 'react'
+import './App.css'
 
-const Button = ({onClick, text}) => {
-    // console.log(props)
-    return (
-        <button onClick={onClick}>{text}</button>
-    )
-}
+const Button = (props) => {
+    render
 
-const Display = ({counter}) => {
-    return <div>{counter}</div>
 }
 
 const App = () => {
@@ -19,11 +14,10 @@ const App = () => {
 
     return (
         <div>
-            {/*<div>{counter}</div>*/}
-            <Display counter={counter}/>
-            <Button text='-' onClick={deincreaseByOne}/>
-            <Button text='0' onClick={setToZero}/>
-            <Button text='+' onClick={increaseByOne}/>
+            <div>{counter}</div>
+            <button onClick={deincreaseByOne}>-</button>
+            <button onClick={setToZero}>0</button>
+            <button onClick={increaseByOne}>+</button>
         </div>
     )
 

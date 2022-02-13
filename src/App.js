@@ -1,78 +1,36 @@
-import {useState} from 'react'
+import './App.css'
+import {Note} from './Note'
+const notes = [
+    {
+        id: 1,
+        content: 'HTML is easy',
+        date: '2019-05-30T17:30:31.098Z',
+        important: true
+    },
+    {
+        id: 2,
+        content: 'Browser can execute only JavaScript',
+        date: '2019-05-30T18:39:34.091Z',
+        important: false
+    },
+    {
+        id: 3,
+        content: 'GET and POST are the most important methods of HTTP protocol',
+        date: '2019-05-30T19:20:14.298Z',
+        important: true
+    }
+]
 
-const Button = ({text, onClick, total}) => {
-    return <button onClick={onClick}>{text}</button>
-}
 
-const Display = ({contador, text}) => {
-    return (<p>{text} {contador}</p>)
-}
-
-const Statistics = (props) => {
-    const {neutral, bad, good} = props.data
-    let sumTotal = neutral + bad + good
-    let ave = parseFloat(sumTotal / 3).toFixed(2)
-    let porcentage = sumTotal === 0 ? 0 : parseFloat(100 / sumTotal * good).toFixed(2)
-    return <>
-        {/*<div>Good: {good}</div>*/}
-        {/*<div>Neutral: {neutral}</div>*/}
-        {/*<div>Bad: {bad}</div>*/}
-        {/*<div>Promedio: {ave}</div>*/}
-        {/*<div>Porcentaje: {porcentage}%</div>*/}
-        <table>
-            <tr>
-                <td>Good</td>
-                <td>{good}</td>
-            </tr>
-            <tr>
-                <td>Neutral</td>
-                <td>{neutral}</td>
-            </tr>
-            <tr>
-                <td>Bad</td>
-                <td>{bad}</td>
-            </tr>
-            <tr>
-                <td>Promedio</td>
-                <td>{ave}</td>
-            </tr>
-            <tr>
-                <td>Total</td>
-                <td>{sumTotal}</td>
-            </tr>
-            <tr>
-                <td>Porce Positiv</td>
-                <td>{porcentage}</td>
-            </tr>
-        </table>
-    </>
-}
 
 const App = () => {
-    // save clicks of each button to its own state
-    const [good, setGood] = useState(0)
-    const [neutral, setNeutral] = useState(0)
-    const [bad, setBad] = useState(0)
-    const clicksLetter = [];
-    const handleGood = () => setGood(good + 1)
-    const handleNeutral = () => setNeutral(neutral + 1)
-    const handleBad = () => setBad(bad + 1)
-    const total = good + neutral + bad
+    return (<>
+            <ol>
+                <h1>Notes</h1>
+                {notes.map(note => <Note key={note.id} {...note}/>)}
+            </ol>
+        </>
 
-    return (
-        <div>
-            <Button text={'Good'} onClick={handleGood}/>
-            <Button text={'Neutral'} onClick={handleNeutral}/>
-            <Button text={'Bad'} onClick={handleBad}/>
-
-            <h1>STATICS</h1>
-            {/*<Display text={'Good'} contador={good}/>*/}
-            {/*<Display text={'Neutral'} contador={neutral}/>*/}
-            {/*<Display text={'Bad'} contador={bad}/>*/}
-            {/*<Display text={'Total: '} contador={total}/>*/}
-            {total === 0 ? <h1>No hay Estadisticas Aun</h1> : <Statistics data={{good, neutral, bad}}/>}
-
-        </div>
     )
 }
 

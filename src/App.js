@@ -19,7 +19,7 @@ const App = () => {
     }, [])
 
     const handleChange = (e) => {
-        // const newNote = e.target.value
+    // const newNote = e.target.value
         setNewNote(e.target.value)
     }
 
@@ -52,7 +52,6 @@ const App = () => {
                 <button>Crear Nota</button>
             </form>
         </>
-
     )
 }
 

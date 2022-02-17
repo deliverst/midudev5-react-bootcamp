@@ -1,9 +1,11 @@
-export const Note = ({userId, id, title, body}) => {
+import React from 'react'
+
+// eslint-disable-next-line react/prop-types
+export const Note = ({title, body}) => {
     return (
         <li>
             <div><strong>{title}</strong></div>
             <div>{body}</div>
-            {/*<div>{note.id}</div>*/}
             <br/>
         </li>
     )

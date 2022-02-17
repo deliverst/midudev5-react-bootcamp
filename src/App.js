@@ -1,6 +1,7 @@
 import './App.css'
 import {Note} from './Note'
 import {useState, useEffect} from 'react'
+import React from 'react'
 // import axios from 'axios'
 import getAllNotes from './services/notes/getAllNotes'
 import createNote from './services/notes/createNote'

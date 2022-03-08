@@ -11,6 +11,4 @@ export const Note = ({title, body}) => {
     )
 }
 
-export default Note
-
 

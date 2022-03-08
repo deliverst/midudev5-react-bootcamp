@@ -1,4 +1,3 @@
-// import {Note} from "../Note";
 import React from 'react'
 
 // eslint-disable-next-line react/prop-types

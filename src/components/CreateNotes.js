@@ -1,33 +1,34 @@
-import {Note} from '../Note'
+import { Note } from '../Note'
 import React from 'react'
+import Toggle from './Toggle'
 
 // eslint-disable-next-line react/prop-types
-export default function CreateNotes({notes, title, body,handleChangeTitle, handleLogOut, handleSubmit, handleChangeBody}) {
+export default function CreateNotes({ notes, title, body, handleChangeTitle, handleLogOut, handleSubmit, handleChangeBody }) {
 
     return (
-        <>
-            <button onClick={handleLogOut}>LogOut</button>
+        <Toggle textButtonShow={ 'MOSTRAR' } textButtonHidden={ 'ESCONDER' }>
             <ol>
                 <h1>Notes</h1>
-                <form onSubmit={handleSubmit}>
+                <button onClick={ handleLogOut }>Logout</button>
+                <form onSubmit={ handleSubmit }>
                     <input
-                        placeholder={'Titulo'}
+                        placeholder={ 'Titulo' }
                         type="text"
-                        onChange={handleChangeTitle}
-                        value={title}
+                        onChange={ handleChangeTitle }
+                        value={ title }
                     />
                     <input
-                        placeholder={'Body'}
+                        placeholder={ 'Body' }
                         type="text"
-                        onChange={handleChangeBody}
-                        value={body}
+                        onChange={ handleChangeBody }
+                        value={ body }
                     />
 
                     <button>Crear Nota</button>
                 </form>
-                {/* eslint-disable-next-line react/prop-types */}
-                {notes.map(note => <Note key={note.id} {...note}/>)}
+                {/* eslint-disable-next-line react/prop-types */ }
+                { notes.map(note => <Note key={ note.id } { ...note }/>) }
             </ol>
-        </>
+        </Toggle>
     )
 }

@@ -10,7 +10,7 @@ export default function LoginForm({handleSubmitLogin, handlePasswordChange, pass
                         type="text"
                         value={username}
                         name='Username'
-                        placeholder='username'
+                        placeholder='Usuario '
                         onChange={handleUsernameChange}
                     />
                 </div>

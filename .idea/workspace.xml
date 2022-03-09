@@ -5,10 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a955436b-0564-493f-a7ee-228c2388a58d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/Toggle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codestream.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CreateNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateNotes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/LoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/LoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/createNotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateNotes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,9 +35,6 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="24yoU6BbFwGvvZP1joGascHu1vJ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -62,7 +62,7 @@
     <property name="node.js.selected.package.standard" value="" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.javascript.linters.eslint" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager" selected="Node.js.scratch_6.js">
@@ -98,7 +98,11 @@
       <workItem from="1646325335605" duration="20000" />
       <workItem from="1646325363650" duration="152000" />
       <workItem from="1646653061575" duration="3309000" />
-      <workItem from="1646657021809" duration="19227000" />
+      <workItem from="1646657021809" duration="28127000" />
+      <workItem from="1646803790755" duration="34000" />
+      <workItem from="1646803840914" duration="14000" />
+      <workItem from="1646803859645" duration="2000" />
+      <workItem from="1646803868819" duration="1561000" />
     </task>
     <servers />
   </component>

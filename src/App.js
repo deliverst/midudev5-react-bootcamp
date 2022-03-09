@@ -1,24 +1,25 @@
+// IMPORTS
 import React from 'react'
 import './App.css'
-// import {Note} from './Note'
-import {useState, useEffect} from 'react'
-import loginServices from './services/login'
+import { useState, useEffect } from 'react'
+import { createNote, setToken } from './services/notes/createNote'
 import getAllNotes from './services/notes/getAllNotes'
-import {createNote, setToken} from './services/notes/createNote'
+import loginServices from './services/login'
 
 // COMPONENTS
 import CreateNotes from './components/CreateNotes'
 import LoginForm from './components/LoginForm'
 
 const App = () => {
+    // NOTES
+    const [ notes, setNotes ] = useState([])
+    const [ title, setTitle ] = useState('')
+    const [ body, setBody ] = useState('')
 
-    const [notes, setNotes] = useState([])
-    const [title, setTitle] = useState('')
-    const [body, setBody] = useState('')
-
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
-    const [user, setUser] = useState('')
+    // USER
+    const [ username, setUsername ] = useState('')
+    const [ password, setPassword ] = useState('')
+    const [ user, setUser ] = useState('')
 
     useEffect(() => {
         getAllNotes.then((notes) => {
@@ -29,7 +30,7 @@ const App = () => {
 
     useEffect(() => {
         const loggedUserJSON = window.localStorage.getItem('loggedNoteAppUser')
-        if (loggedUserJSON) {
+        if ( loggedUserJSON ) {
             const user = JSON.parse(loggedUserJSON)
 
             setUser(user)
@@ -42,11 +43,10 @@ const App = () => {
         setUser(null)
         setToken(user.token)
         window.localStorage.removeItem('loggedNoteAppUser')
+        console.log('quitamos el token de localstorage')
     }
 
     const handleChange = (e) => {
-        // setTitle(e.target.value)
-        // setBody(e.target.value)
         console.log('body and title: ' + e.target.value)
     }
 
@@ -84,54 +84,36 @@ const App = () => {
             setPassword('')
             setUsername('')
 
-        } catch (e) {
+        } catch ( e ) {
             console.log(e)
         }
 
     }
 
-    // const renderNotes = () => {
-    //     return (<>
-    //         <button onClick={handleLogOut}>LogOut</button>
-    //         <ol>
-    //             <h1>Notes</h1>
-    //             <form onSubmit={handleSubmit}>
-    //                 <input
-    //                     placeholder={'crear nota'}
-    //                     type="text"
-    //                     onChange={handleChange}
-    //                     value={title}/>
-    //                 <button>Crear Nota</button>
-    //             </form>
-    //             {notes.map(note => <Note key={note.id} {...note}/>)}
-    //         </ol>
-    //     </>)
-    // }
-
     return (
         <>
-            {user ?
+            <h1>Notas</h1>
+            { user ?
                 <CreateNotes
-                    notes={notes}
-                    title={title}
-                    body={body}
-                    handleChangeTitle={(e)=> setTitle(e.target.value)}
-                    handleChangeBody={(e)=> setBody(e.target.value)}
-                    handleChange={handleChange}
-                    handleSubmit={handleSubmit}
-                    handleLogOut={handleLogOut}
+                    notes={ notes }
+                    title={ title }
+                    body={ body }
+                    handleChangeTitle={ (e) => setTitle(e.target.value) }
+                    handleChangeBody={ (e) => setBody(e.target.value) }
+                    handleChange={ handleChange }
+                    handleSubmit={ handleSubmit }
+                    handleLogOut={ handleLogOut }
                 />
                 :
                 <LoginForm
-                    username={username}
-                    password={password}
-                    user={user}
-                    handleUsernameChange={(e) => setUsername(e.target.value)}
-                    handlePasswordChange={(e) => setPassword(e.target.value)}
-                    handleSubmitLogin={handleSubmitLogin}
-                />}
-
-
+                    username={ username }
+                    password={ password }
+                    user={ user }
+                    handleUsernameChange={ (e) => setUsername(e.target.value) }
+                    handlePasswordChange={ (e) => setPassword(e.target.value) }
+                    handleSubmitLogin={ handleSubmitLogin }
+                />
+            }
         </>
     )
 }
